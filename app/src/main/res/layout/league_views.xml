@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginTop="3dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:foreground="?android:attr/selectableItemBackground"
+                                        android:clickable="true"
+                                        android:id="@+id/league_view_layout"
+                                        app:cardElevation="0dp">
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingStart="7dp"
+                        android:paddingEnd="7dp">
+
+            <TextView
+                    android:layout_marginStart="5dp"
+                    android:layout_width="135dp" android:layout_height="wrap_content"
+                    android:text="Badminton League" android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/league_type"
+                    android:id="@+id/league_name" android:textSize="13sp"/>
+
+
+            <TextView android:layout_width="80dp" android:layout_height="wrap_content"
+                      android:layout_toStartOf="@+id/league_views"
+                      android:paddingStart="5dp"
+                      android:text="Badminton"
+                      android:id="@+id/league_type"
+                      android:paddingEnd="5dp" android:layout_centerVertical="true" android:textSize="12sp"
+                      android:textColor="@color/fabFirstPosition"/>
+
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                      android:id="@+id/league_views"
+                      android:text="361"
+                      android:layout_toStartOf="@+id/view_graph_holder"
+                      android:layout_marginEnd="5dp"
+                      android:layout_centerHorizontal="false" android:layout_centerVertical="true"
+                      android:textAlignment="center" android:textSize="12sp"
+                      android:fontFamily="sans-serif-condensed"/>
+
+            <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                app:cardElevation="0dp"
+                                                app:cardBackgroundColor="#EEEEEEEE"
+                                                android:id="@+id/view_graph_holder"
+                                                android:layout_alignParentEnd="true">
+
+                <com.jjoe64.graphview.GraphView android:layout_height="50dp"
+                                                android:id="@+id/view_graph"
+                                                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                                android:layout_margin="5dp"
+                                                android:layout_width="75dp"/>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

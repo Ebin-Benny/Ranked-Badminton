@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ranked</string>
+    <string name="add_game">Add Game</string>
+    <string name="edit_game">Edit Game</string>
+    <string name="title_activity_begin">BeginActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="client_id">788428058647-645a1v5vda2cqn2uk0qtrkerm4viqvf1.apps.googleusercontent.com</string>
+    <string-array name="game_types">
+        <item> Badminton</item>
+    </string-array>
+    <string name="prompt">League Type</string>
+
+</resources>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ececec"
+              android:orientation="vertical"
+>
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
+            app:titleTextColor="#FFFFFF"
+            app:title="Player Information"
+            app:theme="@style/AppTheme.Toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+    <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+        >
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginTop="3dp"
+                                                    android:layout_marginBottom="3dp"
+                                                    android:layout_marginStart="5dp"
+                                                    android:layout_marginEnd="5dp"
+                                                    android:padding="3dp"
+                                                    app:cardElevation="0dp"
+                                                    android:id="@+id/picture_holder"
+                                                    android:foregroundGravity="center"
+                >
+
+                    <RelativeLayout android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                        <ImageView android:layout_width="80dp" android:layout_height="80dp"
+                                   android:id="@+id/player_image"
+                                   android:layout_marginBottom="5dp"
+                                   android:layout_marginTop="15dp"
+                                   android:layout_marginStart="15dp"
+                                   android:layout_marginEnd="15dp"
+                                   android:layout_gravity="center_vertical"/>
+
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:orientation="horizontal"
+                                      android:gravity="center_vertical"
+                                      android:id="@+id/indicator_layout"
+                                      android:layout_below="@id/player_image"
+                                      android:layout_marginStart="6dp"
+                                      android:layout_marginEnd="15dp"
+                                      android:layout_centerInParent="true"
+                                      android:layout_marginBottom="5dp"
+                        >
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:text="1025"
+                                      android:id="@+id/player_points"
+                                      android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <include layout="@layout/rank_change"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:id="@+id/player_rank_indicator"
+                            />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginTop="3dp"
+                                                    android:layout_marginBottom="3dp"
+                                                    android:layout_marginEnd="5dp"
+                                                    android:padding="3dp"
+                                                    app:cardElevation="0dp"
+                                                    android:layout_toEndOf="@+id/picture_holder"
+                                                    android:id="@+id/name_holder"
+                >
+
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:orientation="vertical">
+
+
+                        <RelativeLayout
+                                android:id="@+id/player_name_layout"
+                                android:gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="15dp"
+                        >
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:background="@color/colorAccent"
+                                      android:text="1"
+                                      android:paddingStart="7dp"
+                                      android:paddingEnd="7dp"
+                                      android:textAppearance="@android:style/TextAppearance.Material.Large"
+                                      android:fontFamily="sans-serif-condensed" android:textStyle="normal|bold"
+                                      android:id="@+id/player_rank"
+                                      android:layout_centerVertical="true"
+                                      android:textColor="@color/white"/>
+
+                            <TextView android:layout_height="wrap_content"
+                                      android:textAppearance="@android:style/TextAppearance.Material.Large"
+                                      android:layout_marginStart="10dp"
+                                      android:layout_toEndOf="@id/player_rank"
+                                      android:id="@+id/player_name"
+                                      android:layout_width="wrap_content" android:fontFamily="sans-serif-condensed"
+                                      android:textSize="24sp" android:text="Ebin Benny"
+                                      android:layout_marginEnd="15dp"
+                                      android:layout_centerVertical="true"
+                            />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                      android:orientation="horizontal"
+                                      android:layout_marginTop="10dp"
+                                      android:id="@+id/player_winrate_layout"
+                                      android:layout_marginStart="15dp"
+                        >
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                      android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                                      android:text="Win Rate"
+                                      android:fontFamily="sans-serif-condensed" android:textColor="@color/black"
+                                      android:textSize="16sp"/>
+
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                      android:id="@+id/player_winrate"
+                                      android:text="65%"
+                                      android:layout_marginStart="10dp"
+                                      android:fontFamily="sans-serif-condensed"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_marginEnd="10dp"
+                                      android:id="@+id/player_win_indicator"
+                                      android:layout_marginTop="10dp"
+                                      android:orientation="horizontal"
+                                      android:layoutDirection="rtl"
+                                      android:gravity="end"
+                                      android:layout_marginBottom="15dp">
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:cardElevation="0dp"
+                    android:padding="3dp"
+            >
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TableLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                                 android:layout_toStartOf="@+id/spacer"
+                                 android:layout_marginStart="5dp"
+                    >
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Total Games"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <TextView
+                                    android:id="@+id/total_games"
+                                    android:text="123"
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="W/L"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <LinearLayout
+                            >
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/games_won"
+                                        android:text="76"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabFirstPosition"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:text="/"
+                                        android:fontFamily="sans-serif-condensed"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/games_lost"
+                                        android:text="24"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabSecondPosition"/>
+
+
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Total Pts"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <TextView
+                                    android:id="@+id/total_points"
+                                    android:text="1045"
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Max Rank"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <TextView
+                                    android:id="@+id/max_rank"
+                                    android:text="1000"
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"/>
+
+                        </TableRow>
+
+                    </TableLayout>
+                    <Space android:layout_width="1dp" android:layout_height="match_parent"
+                           android:layout_centerHorizontal="true"
+                           android:id="@+id/spacer"
+                    />
+
+                    <TableLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                                 android:layout_toEndOf="@+id/spacer"
+                                 android:layout_marginEnd="5dp"
+
+                    >
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Total Sets"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <TextView
+                                    android:id="@+id/total_sets"
+                                    android:text="123"
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Sets W/L"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <LinearLayout
+                            >
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/sets_won"
+                                        android:text="76"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabFirstPosition"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:text="/"
+                                        android:fontFamily="sans-serif-condensed"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/sets_lost"
+                                        android:text="24"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabSecondPosition"/>
+
+
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="W/L Margin"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <LinearLayout
+                            >
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/win_margin"
+                                        android:text="5.3"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabFirstPosition"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:text="/"
+                                        android:fontFamily="sans-serif-condensed"/>
+                                <TextView
+                                        android:layout_height="wrap_content"
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/loss_margin"
+                                        android:text="2.4"
+                                        android:padding="5dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/fabSecondPosition"/>
+
+
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                    android:text="Min Rank"
+                                    android:padding="5dp"
+                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                    android:fontFamily="sans-serif-condensed" android:textColor="@color/black"/>
+                            <TextView
+                                    android:id="@+id/min_rank"
+                                    android:text="900"
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"/>
+                        </TableRow>
+
+                    </TableLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_marginBottom="3dp"
+                                                android:layout_marginStart="5dp"
+                                                android:layout_marginEnd="5dp"
+                                                app:cardElevation="0dp"
+                                                android:padding="3dp">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                >
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:text="Performance"
+                              android:textAppearance="@android:style/TextAppearance.Material.Small"
+                              android:padding="5dp"
+                              android:textAlignment="center" android:textColor="@color/black"
+                              android:fontFamily="sans-serif-condensed" android:textSize="15sp"/>
+
+                    <com.jjoe64.graphview.GraphView android:layout_height="200dp"
+                                                    android:id="@+id/graph"
+                                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                                    android:layout_margin="10dp"
+                                                    android:layout_width="wrap_content"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_marginBottom="3dp"
+                                                android:layout_marginStart="5dp"
+                                                android:layout_marginEnd="5dp"
+                                                android:padding="3dp"
+                                                app:cardElevation="0dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                >
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                    >
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:text="Recent Games"
+                                  android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                  android:padding="5dp"
+                                  android:textAlignment="center" android:textColor="@color/black"
+                                  android:fontFamily="sans-serif-condensed" android:textSize="15sp"/>
+
+                        <include layout="@layout/log_titles_plain"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/recent_games_list"
+                          android:orientation="vertical"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

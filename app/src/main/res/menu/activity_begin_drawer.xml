@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+                android:id="@+id/nav_view"
+                android:icon="@drawable/ic_visibility_black_24dp"
+                android:title="View League"/>
+        <item
+                android:id="@+id/nav_create"
+                android:icon="@drawable/ic_create_black_24dp"
+                android:title="Create League"/>
+    </group>
+
+
+    <group>
+        <item android:title="My Leagues"
+              android:id="@+id/my_leagues"
+              android:icon="@drawable/ic_person_black_24dp">
+
+            <menu android:checkableBehavior="single"/>
+        </item>
+    </group>
+    <group>
+        <item android:title="Followed Leagues"
+              android:id="@+id/followed_leagues"
+              android:icon="@drawable/ic_star_white_24dp">
+            <menu android:checkableBehavior="single"/>
+        </item>
+    </group>
+
+
+    <group android:checkableBehavior="none"
+           android:id="@+id/sign_out_container">
+        <item android:title="Sign Out"
+              android:id="@+id/sign_out"
+              android:icon="@drawable/ic_clear_black_24dp"
+              android:visible="false"/>
+    </group>
+
+</menu>

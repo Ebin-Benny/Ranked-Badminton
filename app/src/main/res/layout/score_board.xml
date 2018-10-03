@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_alignParentTop="true"
+                  android:layout_alignParentStart="true">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:padding="3dp">
+
+            <include layout="@layout/score_name"
+                     android:id="@+id/playerScoreDisplay"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+            />
+
+        </LinearLayout>
+
+        <include layout="@layout/rank_change"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:id="@+id/rankChangeLayout"
+
+        />
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:layout_gravity="right|center_vertical"
+                      android:layoutDirection="rtl"
+        >
+
+            <View android:layout_width="6dp" android:layout_height="9dp" android:background="@drawable/triangle"
+                  android:layout_gravity="center_vertical"
+                  android:layout_below="@+id/view" android:layout_toEndOf="@+id/view"
+                  android:visibility="invisible"
+                  android:id="@+id/winIndicator"
+                  android:layout_marginEnd="10dp"/>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:layoutDirection="ltr"
+                          android:id="@+id/scoreHolder"
+                          android:layout_toStartOf="@+id/winIndicator"
+                          android:orientation="horizontal" android:gravity="center_vertical">
+
+
+                <include layout="@layout/match_score"
+                         android:id="@+id/board0"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                />
+
+                <include layout="@layout/match_score"
+                         android:id="@+id/board1"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+
+                />
+
+                <include layout="@layout/match_score"
+                         android:id="@+id/board2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

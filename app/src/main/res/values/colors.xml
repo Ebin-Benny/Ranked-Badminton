@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#464b4d</color>
+    <color name="colorPrimaryDark">#FF212121</color>
+    <color name="colorAccent">#40c4ff</color>
+    <color name="white">#ffffff</color>
+    <color name="fabFirstPosition">#388e3c</color>
+    <color name="fabSecondPosition">#ef5350</color>
+    <color name="light_gray">#555555</color>
+    <color name="interface_background">#ececec</color>
+    <color name="colorControlHighlight">#ffffff</color>
+    <array name="game_colors">
+        <item>#2e7d32</item>
+    </array>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:id="@+id/app_bar_layout">
+
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?attr/colorPrimary"
+                android:popupTheme="@style/Base.ThemeOverlay.AppCompat.Dark"/>
+
+        <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                app:tabPaddingStart="20dp"
+                app:tabPaddingEnd="20dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+            android:layout_below="@id/app_bar_layout"
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    />
+
+    <android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:id="@+id/coordinator">
+
+        <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:elevation="20dp"
+                                                    android:id="@+id/bottom_sheet"
+                                                    app:layout_behavior="@string/bottom_sheet_behavior"
+                                                    app:behavior_hideable="true"
+                                                    android:clipToPadding="true"
+                                                    android:background="?android:attr/colorBackground">
+
+            <include layout="@layout/badminton_input"
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:id="@+id/input_layout"/>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:fabSize="normal" app:srcCompat="@drawable/ic_add_white_64dp"
+                app:rippleColor="#f0f4c3"
+                android:id="@+id/input_button"
+                android:tint="#FFFFFF"
+                app:backgroundTint="@color/fabFirstPosition"
+                app:layout_anchor="@id/bottom_sheet"
+                app:layout_anchorGravity="top|end"
+                android:layout_margin="15dp" app:elevation="21dp" android:cropToPadding="false"/>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

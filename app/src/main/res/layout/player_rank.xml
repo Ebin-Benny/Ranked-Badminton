@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginTop="3dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:paddingLeft="5dp"
+                                        android:paddingRight="5dp" app:cardElevation="0dp"
+                                        android:id="@+id/playerRankLayout"
+                                        android:foreground="?android:attr/selectableItemBackground"
+                                        android:clickable="true"
+    >
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="7dp"
+                        android:paddingLeft="7dp">
+
+            <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/playerRank"
+                    android:text="123"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true" android:fontFamily="sans-serif-condensed"/>
+
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                       android:id="@+id/playerPicture"
+                       android:layout_centerInParent="true"
+                       android:layout_toEndOf="@id/playerRank"
+            />
+
+            <TextView
+                    android:layout_height="wrap_content"
+                    android:id="@+id/playerName"
+                    android:text="Ebin"
+                    android:layout_width="70dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@id/playerPicture" android:fontFamily="sans-serif-condensed"/>
+
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toEndOf="@id/playerName"
+                            android:id="@+id/smallGraphLayout"
+                            android:layout_alignParentEnd="true"
+            >
+
+                <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    app:cardElevation="0dp"
+                                                    app:cardBackgroundColor="#EEEEEEEE"
+                                                    android:id="@+id/smallGraphHolder"
+                                                    android:layout_alignParentEnd="true"
+                >
+
+                    <com.jjoe64.graphview.GraphView android:layout_height="50dp"
+                                                    android:id="@+id/smallGraph"
+                                                    android:textAppearance="@android:style/TextAppearance.Material.Small"
+                                                    android:layout_margin="5dp"
+                                                    android:layout_width="75dp"/>
+
+                </android.support.v7.widget.CardView>
+                <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/playerRanking"
+                        android:layout_toStartOf="@id/smallGraphHolder"
+                        android:text="10000"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="5dp" android:fontFamily="sans-serif-condensed"/>
+
+                <include layout="@layout/rank_change"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_toLeftOf="@+id/playerRanking"
+                         android:layout_marginRight="5dp"
+                         android:layout_centerInParent="true"
+                         android:id="@+id/rankChangeLayout"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
